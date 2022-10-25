@@ -17,7 +17,7 @@ export default class AwsUtil {
             // const fileData = this.extractFile(contentType, file);
             const s3Key = [dealershipStoreId, vehicleId, fileName].join('/');
 
-            return await this.s3
+            return this.s3
                 .putObject({
                     Bucket: process.env.AWS_BUCKET_NAME,
                     Key: s3Key,
@@ -29,7 +29,7 @@ export default class AwsUtil {
                     err => err
                 );
         } catch(e) {
-            console.log(e);
+            console.error(e);
             throw 'error';
         }
     }
@@ -38,8 +38,8 @@ export default class AwsUtil {
         const boundary = MultipartParser.getBoundary(contentType);
         const parts = MultipartParser.Parse(Buffer.from(file), boundary);
 
-        const [{filename:name, data}] = parts;
+        const [{ filename:name, data }] = parts;
 
-        return {name, data};
+        return { name, data };
     }
 }
