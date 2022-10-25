@@ -19,4 +19,4 @@ const withMiddlewares = (handler, middlewares = []) => (event, context) => {
         .catch(error => error)
 }
 
-export {withMiddlewares};
+export { withMiddlewares };
