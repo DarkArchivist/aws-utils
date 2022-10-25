@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2015"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./functions/**/*.d.ts",
+      "./functions/**/**/*.d.ts"
+    ]
+  },
+}

@@ -1,0 +1,7 @@
+create-user:
+  handler: functions/user/handler.createUser
+  events:
+    - http:
+        cors: true
+        path: admin/user
+        method: POST

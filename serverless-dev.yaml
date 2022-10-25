@@ -1,0 +1,49 @@
+service: apis
+
+custom:
+  private: false
+  cors_host:
+  stage: dev
+
+resources: ${file(./resources.yml)}
+
+package:
+  patterns:
+    - mailer/templates/**
+    - middlewares/**
+
+useDotenv: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  timeout: 15
+  memorySize: 512
+  lambdaHashingVersion: 20201221
+  versionFunctions: false
+  httpApi:
+    cors: true
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - 's3:*'
+          Resource:
+            - "arn:aws:s3:::name.dev.assets"
+            - "arn:aws:s3:::name.dev.assets/*"
+  vpc:
+    securityGroupIds:
+      - sg-0551bf3b01bbb4fe1
+    subnetIds:
+      - subnet-07ddf838
+      - subnet-d63ccd9c
+
+functions:
+  - ${file(functions/user/index.yml)}
