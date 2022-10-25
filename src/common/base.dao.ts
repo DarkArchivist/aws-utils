@@ -13,6 +13,6 @@ export default class BaseDao {
     };
 
     protected async createConnection(): Promise<Connection> {
-        return await this.db.getConnection();
+        return this.db.getConnection();
     }
 }
