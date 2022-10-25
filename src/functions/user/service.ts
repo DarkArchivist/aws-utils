@@ -15,7 +15,7 @@ export default class UserService {
     }
 
     async createUser(body) {
-        const {user_account_role_id, dealership_store_id: dxIds, password: pwd, ...userData} = body;
+        const {user_account_role_id, password: pwd, ...userData} = body;
 
         const user = new UserEntity();
 
