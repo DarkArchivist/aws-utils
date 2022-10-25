@@ -1,4 +1,4 @@
-import {APIGatewayProxyResult} from "aws-lambda";
+import { APIGatewayProxyResult } from "aws-lambda";
 
 export const createResponse = (
     statusCode: number = 200,
