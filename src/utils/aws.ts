@@ -38,7 +38,7 @@ export default class AwsUtil {
         const boundary = MultipartParser.getBoundary(contentType);
         const parts = MultipartParser.Parse(Buffer.from(file), boundary);
 
-        const [{ filename:name, data }] = parts;
+        const [{ filename: name, data }] = parts;
 
         return { name, data };
     }
