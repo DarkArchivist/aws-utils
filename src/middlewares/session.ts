@@ -22,7 +22,7 @@ const SessionMiddleware = () => {
             throw createResponse(403, false, {}, "You have to be authenticated, in order to access this resource")
         }
 
-        return await jwt
+        return jwt
             .checkToken(
                 token.split(' ')[1],
                 async (err, decoded) => {
