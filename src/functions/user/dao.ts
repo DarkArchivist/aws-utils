@@ -13,7 +13,7 @@ export default class UserDao extends BaseDao {
 	async getRoleById(id: number): Promise<UserRoleEntity> {
 		const dbConn: Connection = await this.createConnection();
 
-		return await dbConn.getRepository(UserRoleEntity).findOneOrFail({
+		return dbConn.getRepository(UserRoleEntity).findOneOrFail({
 			where: {
 				user_account_role_id: id
 			}
@@ -23,6 +23,6 @@ export default class UserDao extends BaseDao {
 	async saveUserEntity(user: UserEntity) {
 		const dbConn: Connection = await this.createConnection();
 
-		return await dbConn.getRepository(UserEntity).save(user);
+		return dbConn.getRepository(UserEntity).save(user);
 	}
 }
