@@ -22,7 +22,7 @@ class Handler {
         const body = JSON.parse(event.body);
 
         try {
-            return await this.userService.createUser(body);
+            return this.userService.createUser(body);
         } catch (error) {
             return createResponse(500, false, error, "Something went wrong");
         }
