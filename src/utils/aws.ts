@@ -15,7 +15,7 @@ export default class AwsUtil {
     public async fileUpload(fileData, fileName): Promise<string> {
         try {
             // const fileData = this.extractFile(contentType, file);
-            const s3Key = [fileName].join('/');
+            const s3Key = fileName;
 
             return this.s3
                 .putObject({
