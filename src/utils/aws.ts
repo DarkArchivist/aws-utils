@@ -12,7 +12,7 @@ export default class AwsUtil {
         });
     }
 
-    public async fileUpload(dealershipStoreId, vehicleId, fileData, fileName): Promise<string> {
+    public async fileUpload(fileData, fileName): Promise<string> {
         try {
             // const fileData = this.extractFile(contentType, file);
             const s3Key = [fileName].join('/');
