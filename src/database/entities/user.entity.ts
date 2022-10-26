@@ -13,7 +13,7 @@ import {
 import UserRoleEntity from "./user-role.entity";
 
 // MAIN ENTITY
-@Entity({ name: 'mapa_user_account' })
+@Entity({ name: 'user_account' })
 export default class UserEntity {
     @PrimaryGeneratedColumn('identity', { type: 'int4', generatedIdentity: 'ALWAYS' })
     user_account_id!: number;
