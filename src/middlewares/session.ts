@@ -41,16 +41,13 @@ const SessionMiddleware = () => {
                         .findOne({
                             where: { user_account_id: decoded.id },
                             relations: [
-                                'role',
-                                'dealerships',
-                                'dealerships.state'
+                                'role'
                             ]
                         });
 
                     const eventData = {
                         ...event,
-                        user,
-                        dealership_store_id: decoded.dealership_store_id
+                        user
                     }
 
                     return next(eventData, context)
