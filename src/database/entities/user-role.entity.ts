@@ -2,7 +2,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 // MAIN ENTITY
-@Entity({ name: 'mapa_user_account_role' })
+@Entity({ name: 'user_account_role' })
 export default class UserRoleEntity {
 	@PrimaryGeneratedColumn('identity', { type: 'int4', generatedIdentity: 'ALWAYS' })
 	user_account_role_id!: number;
